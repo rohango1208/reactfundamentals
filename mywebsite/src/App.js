@@ -6,6 +6,7 @@ import About from "./components/about";
 import Services from "./components/services";
 import Login from "./components/login";
 import Footer from "./components/footer";
+import Task from "./components/task";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             <li>
               <Link to="/login">Login</Link>
             </li>
+            <li>
+              <Link to="/task">Task</Link>
+            </li>
           </ul>
         </nav>
             <Routes>
@@ -35,6 +39,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/task" element={<Task />} />
         </Routes>
         <Footer />
         </div>

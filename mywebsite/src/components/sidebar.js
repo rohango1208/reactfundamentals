@@ -25,7 +25,11 @@ const Sidebar = () => {
       <h2>Sidebar</h2>
       <ul style={listStyle}>
         <li style={listItemStyle}>Home</li>
+        </ul>
+        <ul style={listStyle}>
         <li style={listItemStyle}>About</li>
+        </ul>
+        <ul style={listStyle}>
         <li style={listItemStyle}>Contact</li>
       </ul>
     </div>
@@ -42,7 +46,7 @@ const sidebarStyle = {
   padding: "8px",
   display: "flex",
   flexDirection: "column",
-  // justifyContent: "space-between",
+  justifyContent:"left",
 };
 
 const listStyle = {

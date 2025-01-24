@@ -42,6 +42,7 @@ const form={
 };
 const form2={
     display:"flex",
+    
 };
 const buttonStyle={
     color:"red",
