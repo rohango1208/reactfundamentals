@@ -2,7 +2,7 @@
 import React,{useState } from "react";
 
 function Textedit(){
-  const [text , setText] = useState()
+  const [text,setText] = useState("")
 
   const UpperCase =() => {
     setText(text.toUpperCase());
@@ -11,9 +11,16 @@ function Textedit(){
     setText(text.toLowerCase());
   };
     const removespecialcharacter =() => {
-    const cleanText = text.replace(/[$#%*-_@&]/g,'');
+    const cleanText = text.replace(/[^a-zA-Z0-9]/g,'');
     setText(cleanText);
   };
+  const removeExtraSpace = () => {
+    console.log("text value",text)
+    const space = text.replace(/\s+/g,' ').trim(); 
+    setText(space);
+};
+
+  
   const Change= (e)=> {
     setText(e.target.value);
 
@@ -31,8 +38,8 @@ function Textedit(){
 <div>
   <button onClick={UpperCase} style ={{margin:"5px", backgroundColor:"red",color:"white"}}>convert to upper case</button>
   <button onClick={LowerCase} style ={{margin:"5px", backgroundColor:"red",color:"white"}}>convert to lower case</button>
-  {/* <button onClick={LowerCase} style ={{margin:"5px", backgroundColor:"red",color:"white"}}>convert to lower case</button> */}
   <button onClick={removespecialcharacter} style ={{margin:"5px", backgroundColor:"red",color:"white"}}>removespecialcharacter</button>
+  <button onClick={removeExtraSpace} style ={{margin:"5px", backgroundColor:"red",color:"white"}}>removeextraspace</button>
 </div>
     </div>
   );
